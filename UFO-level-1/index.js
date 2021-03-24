@@ -1,10 +1,11 @@
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
-// Console.log the weather data from data.js
+// Console.log the UFO sighting data
 console.log(data);
 
-// Step 1: Loop Through `data`, add a row to the table for each UFO sighting
+// write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
+// Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 data.array.forEach(function(UFOsighting) => {
     console.log(UFOsighting);
     var row=tbody.append('tr');
@@ -16,6 +17,5 @@ data.array.forEach(function(UFOsighting) => {
     });
 });
 
-// write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
-
-// Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
+// Use a date form in your HTML document and write JavaScript code that will listen for events
+// Search through the `date/time` column to find rows that match user input.
