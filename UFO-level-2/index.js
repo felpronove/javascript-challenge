@@ -82,8 +82,8 @@ function CityFilter(){
 }
 
 // Create event handlers for clicking the button or pressing the enter key
-d3.select("#city-filter-btn").on("click", cityFilter);
-d3.select("#form").on("submit", cityFilter);
+d3.select("#city-filter-btn").on("click", CityFilter);
+d3.select("#form").on("submit", CityFilter);
 
 // create a function that will create a filter for state 
 function StateFilter(){
@@ -130,6 +130,29 @@ function CountryFilter(){
 // Create event handlers for clicking the button or pressing the enter key
 d3.select("#country-filter-btn").on("click", CountryFilter);
 d3.select("#form").on("submit", CountryFilter);
+
+// create a function that will create a filter for UFO shape 
+function ShapeFilter(){
+    // pull data for UFO sightings 
+     var filterUFOshape = UFOsighting
+     d3.event.preventDefault();
+
+     // Set up a variable to hold the UFO shape entered by user
+     var userShape=d3.select("#shape").property("value");
+
+     // Use input from field to filter the data for shape
+     // if user enters a shape, filter data to include sightings that match the criteria
+     if(userShape) {
+         filterUFOshape=filterUFOshape.filter(item => item.shape===userShape);
+     };
+
+     // run the createTable function with the filtered data
+     createTable(filterUFOshape);
+}
+
+// Create event handlers for clicking the button or pressing the enter key
+d3.select("#shape-filter-btn").on("click", ShapeFilter);
+d3.select("#form").on("submit", ShapeFilter);
 
 // call build table function no matter if filter function goes or not
 
